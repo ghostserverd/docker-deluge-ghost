@@ -38,18 +38,18 @@ jobs:
             docker push $IMAGE_NAME:latest
 workflows:
   version: 2
-  build-master:
+  build-main:
     jobs:
       - build:
           filters:
             branches:
-              only: master
+              only: main
       - publish-latest:
           requires:
             - build
           filters:
             branches:
-              only: master
+              only: main
           context: DOCKER_CREDS
   build-on-schedule:
     jobs:
@@ -66,4 +66,4 @@ workflows:
           filters:
             branches:
               only:
-                - master
+                - main
