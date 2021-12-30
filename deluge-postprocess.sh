@@ -44,6 +44,8 @@ case $TR_TORRENT_DIR in
 esac
 
 set | grep \
+        -e TR_TORRENT_DIR \
+        -e TR_TORRENT_NAME \
         -e ARG_PATH \
         -e ARG_NAME \
         -e ARG_LABEL \
@@ -60,7 +62,7 @@ set | grep \
         -e LIDARR_PORT \
         -e LIDARR_API_KEY \
         -e IGNORE_LABELS \
-        >> /config/rutorrent_env.log
+        >> /config/deluge_env.log
 
 # exit with success if label should not be processed by filebot
 [ ! -z "$IGNORE_LABELS" ] && case $FILEBOT_LABEL in $IGNORE_LABELS) exit 0;; esac
