@@ -1,4 +1,4 @@
-FROM linuxserver/deluge:amd64-2.0.5
+FROM linuxserver/deluge
 
 # add ghost config file
 COPY root/ /
